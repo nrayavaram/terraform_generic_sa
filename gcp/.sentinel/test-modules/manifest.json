@@ -1,0 +1,40 @@
+{
+	"records": [
+		{
+			"key": "test\\appsec_gcp_serviceaccount_restriction\\null-gdc-dp-sa\\generic-functions",
+			"source": "../../../common-functions/generic-functions/generic-functions.sentinel",
+			"sourceSum": "",
+			"dest": "C:/Users/savitap/Projects/terraform_generic_sa/common-functions/generic-functions/generic-functions.sentinel"
+		},
+		{
+			"key": "test\\appsec_gcp_serviceaccount_restriction\\success-gdc-dp-sa\\tfplan-functions",
+			"source": "../../../common-functions/tfplan-functions/tfplan-functions.sentinel",
+			"sourceSum": "",
+			"dest": "C:/Users/savitap/Projects/terraform_generic_sa/common-functions/tfplan-functions/tfplan-functions.sentinel"
+		},
+		{
+			"key": "test\\appsec_gcp_serviceaccount_restriction\\success-gdc-dp-sa\\generic-functions",
+			"source": "../../../common-functions/generic-functions/generic-functions.sentinel",
+			"sourceSum": "",
+			"dest": "C:/Users/savitap/Projects/terraform_generic_sa/common-functions/generic-functions/generic-functions.sentinel"
+		},
+		{
+			"key": "test\\appsec_gcp_serviceaccount_restriction\\failure-gdc-dp-sa\\tfplan-functions",
+			"source": "../../../common-functions/tfplan-functions/tfplan-functions.sentinel",
+			"sourceSum": "",
+			"dest": "C:/Users/savitap/Projects/terraform_generic_sa/common-functions/tfplan-functions/tfplan-functions.sentinel"
+		},
+		{
+			"key": "test\\appsec_gcp_serviceaccount_restriction\\failure-gdc-dp-sa\\generic-functions",
+			"source": "../../../common-functions/generic-functions/generic-functions.sentinel",
+			"sourceSum": "",
+			"dest": "C:/Users/savitap/Projects/terraform_generic_sa/common-functions/generic-functions/generic-functions.sentinel"
+		},
+		{
+			"key": "test\\appsec_gcp_serviceaccount_restriction\\null-gdc-dp-sa\\tfplan-functions",
+			"source": "../../../common-functions/tfplan-functions/tfplan-functions.sentinel",
+			"sourceSum": "",
+			"dest": "C:/Users/savitap/Projects/terraform_generic_sa/common-functions/tfplan-functions/tfplan-functions.sentinel"
+		}
+	]
+}

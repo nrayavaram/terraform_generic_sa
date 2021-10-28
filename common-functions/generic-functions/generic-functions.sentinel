@@ -36,25 +36,3 @@ create_sub_main_key_list = func(main_list, sub_list, address){
 
 	return null
 }
-
-check_cluster_config = func(address, rc) {
-	key = "cluster_config"
-	selected_node = plan.evaluate_attribute(rc, key)
-	
-	if types.type_of(selected_node) is "null" {
-		return plan.to_string(address) + " does not have "+ key +" defined"
-	} else {
-		return null
-	}
-}
-
-check_gce_cluster_config = func(address, rc) {
-	key = "gce_cluster_config"
-	selected_node = plan.evaluate_attribute(rc, "cluster_config.0." + key)
-
-	if types.type_of(selected_node) is "null" {
-		return plan.to_string(address) + " does not have "+ key +" defined"
-	} else {
-		return null
-	}
-}

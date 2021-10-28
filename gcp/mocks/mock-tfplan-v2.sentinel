@@ -254,8 +254,8 @@ resource_changes = {
 						"gce_cluster_config": [
 							{
 								"internal_ip_only": true,
-								"metadata":         null, #sa@common.iam.gserviceaccount.com
-								"service_account":  "demo-sentinel-compute@developer.gserviceaccount.com",
+								"metadata":         null,
+								"service_account":  "demo-sentinel-sa@common.iam.gserviceaccount.com",
 								"subnetwork":       "projects/common/regions/us-east1/subnetworks/savita-subnet-vpc-2",
 								"tags": [
 									"bar",
@@ -733,7 +733,7 @@ resource_changes = {
 				"self_link": true,
 				"service_account": [
 					{
-						"email": false,
+						"email": true,
 						"scopes": [
 							false,
 						],
