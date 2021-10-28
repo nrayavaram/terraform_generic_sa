@@ -1,0 +1,10 @@
+{
+	"records": [
+		{
+			"key": "appsec_gcp_serviceaccount_restriction",
+			"source": "./appsec_gcp_serviceaccount_restriction.sentinel",
+			"sourceSum": "",
+			"dest": "C:/Users/savitap/Projects/terraform_generic_sa/gcp/appsec_gcp_serviceaccount_restriction.sentinel"
+		}
+	]
+}
