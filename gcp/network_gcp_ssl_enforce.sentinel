@@ -1,0 +1,68 @@
+# This policy uses the Sentinel tfplan/v2 import to require that
+# all GCE resources following all the policies related to SSL enforcement
+
+# Note that the comparison is case-sensitive.
+
+import "strings"
+import "types"
+import "tfplan-functions" as plan
+import "generic-functions" as gen
+
+//******Resource Types SSL Enforce Param Map***********************************
+resourceTypesSSLEnforceMap = {	
+	"google_dataproc_cluster": {
+		"key":   	"cluster_config.0.endpoint_config.0.enable_http_port_access",
+	},
+}
+
+//**********************Variables to be used***********************************
+selected_node = null
+messages = {}
+
+//******Following function is being used to validate the SSL settings as per the GCP resource's requirement
+//address is the key and rc is the value of resource_changes in the mock of tfplan-v2 file
+
+check_endpoint_config = func(address, rc) {
+
+	key = resourceTypesSSLEnforceMap[rc.type]["key"]
+	selected_node = plan.evaluate_attribute(rc, key)
+	
+	if  selected_node {
+		return "Http port's access needs to be disabled for the " + plan.to_string(address) + " services, please set value false to make it disabled"
+	} else {
+		return null
+	}
+}
+
+//*******************validating enable_http_port_access node*******************
+messages_http = {}
+
+for resourceTypesSSLEnforceMap as key_address, _ {
+	
+	# Get all the instances on the basis of type
+	allResources = plan.find_resources(key_address)
+	
+	for allResources as address, rc {
+		message = null
+		message = check_endpoint_config(address, rc)
+
+		if types.type_of(message) is not "null"{
+			
+			gen.create_sub_main_key_list( messages, messages_http, address)
+
+			append(messages_http[address],message)
+			append(messages[address],message)
+
+		}
+	}
+}
+//*****************************************************************************
+
+GCP_SSL_ENFORCE = rule {
+	length(messages_http) is 0
+}
+
+# Main rule
+print(messages)
+
+main = rule { GCP_SSL_ENFORCE }

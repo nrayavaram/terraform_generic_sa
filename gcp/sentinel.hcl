@@ -25,4 +25,15 @@ policy "appsec_gcp_serviceaccount_restriction" {
     enforcement_level = "advisory"
 }
 
+policy "network_gcp_ip_restriction" {
+    source = "./network_gcp_ip_restriction.sentinel"
+    enforcement_level = "advisory"
+}
+
+
+policy "network_gcp_ssl_enforce" {
+    source = "./network_gcp_ssl_enforce.sentinel"
+    enforcement_level = "advisory"
+}
+
 
