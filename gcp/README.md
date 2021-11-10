@@ -1,4 +1,4 @@
-### The sentinel code is validating below policies, service accounts, internal ips and ssl enforcement. 
+### There are 3- sentinel files, having code to validate service accounts, internal ips and ssl enforcement. Below are the three policies, those need to be validated successfully to deploy the terraform code. 
 * Only Custom Service Account will be used.
 * Internal IPs will be enabled only, no communication thorugh external ip addresses.
 * Only https access will be allowed.
