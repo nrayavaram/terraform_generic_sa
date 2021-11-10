@@ -1,4 +1,4 @@
-### There are 3-sentinel policies, written to validate the service accounts, internal ips and ssl enforcement. 
+### The sentinel code is validating below policies, service accounts, internal ips and ssl enforcement. 
 * Only Custom Service Account will be used.
 * Internal IPs will be enabled only, no communication thorugh external ip addresses.
 * Only https access will be allowed.
