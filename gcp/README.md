@@ -1,9 +1,9 @@
-### There are 3- sentinel files, having code to validate service accounts, internal ips and ssl enforcement. Below are the three policies, those need to be validated successfully to deploy the terraform code. 
+### Below three policies are required to be validated successfully to deploy the terraform code. There are 3- sentinel files, having code to validate service accounts, internal ips and ssl enforcement. 
 * Only Custom Service Account will be used.
 * Internal IPs will be enabled only, no communication thorugh external ip addresses.
 * Only https access will be allowed.
 
-### appsec_gcp_serviceaccount_restriction
+### appsec_gcp_serviceaccount_restriction.sentinel
 #### Variables 
 * selected_node: It is being used locally to have information of node by passing the path.
 * messages: It is being used to hold the complete message of policies violation to show to the user.
@@ -21,7 +21,7 @@
       |address|The key inside of resource_changes section for particular GCP Resource in tfplan mock|
       |rc|The value of address key inside of resource_changes section for particular GCP Resource in tfplan mock|
 
-### network_gcp_ip_restriction
+### network_gcp_ip_restriction.sentinel
 #### Variables 
 * selected_node: It is being used locally to have information of node by passing the path.
 * messages: It is being used to hold the complete message of policies violation to show to the user.
@@ -38,7 +38,7 @@
       |address|The key inside of resource_changes section for particular GCP Resource in tfplan mock|
       |rc|The value of address key inside of resource_changes section for particular GCP Resource in tfplan mock|
 
-### network_gcp_ssl_enforce
+### network_gcp_ssl_enforce.sentinel
 #### Variables 
 * selected_node: It is being used locally to have information of node by passing the path.
 * messages: It is being used to hold the complete message of policies violation to show to the user.
